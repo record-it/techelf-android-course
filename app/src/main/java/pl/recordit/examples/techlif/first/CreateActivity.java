@@ -3,13 +3,18 @@ package pl.recordit.examples.techlif.first;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.Spinner;
+import android.widget.SpinnerAdapter;
 import android.widget.Toast;
 
 public class CreateActivity extends AppCompatActivity {
     private static final String TAG = "APP";
-
+    private Button sendEmailButton;
     @Override
     protected void onStart() {
         super.onStart();
@@ -57,5 +62,19 @@ public class CreateActivity extends AppCompatActivity {
         Toast
                 .makeText(this, "Wartość licznika " + counter, Toast.LENGTH_SHORT)
                 .show();
+        sendEmailButton = findViewById(R.id.sendEmailButton);
+        sendEmailButton.setOnClickListener(v -> {
+            Intent actionIntent = new Intent(Intent.ACTION_SENDTO);
+            actionIntent.setData(Uri.parse("boss@techelf.pl"));
+            actionIntent.putExtra(Intent.EXTRA_SUBJECT, "Hello");
+            actionIntent.putExtra(Intent.EXTRA_TEXT, "Hello");
+            actionIntent.setType("message/rfc822");
+            startActivity(Intent.createChooser(actionIntent, "Wybierz klienta poczty"));
+        });
+        //Dodaj przycisk Wyświetl pierwszą osobę z ksiązki telefonicznej lub połącz z numerem
+        //w obłudze przycisku uruchom intencję typu ACTION_DIAL z URI tel:123
+        //lub akcję typu ACTION_VIEW z URI content://contacts/people/1
+        //lub ACTION_VIEW z adresem strony w URI
+
     }
 }
