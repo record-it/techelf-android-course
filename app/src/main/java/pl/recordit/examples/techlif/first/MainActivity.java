@@ -107,8 +107,10 @@ public class MainActivity extends AppCompatActivity{
             }
         });
         constraintActivityButton.setOnClickListener(v ->
-                startActivity(new Intent(this, ConstraintLayoutActivity.class))
+                startActivity(new Intent(this, PeopleListActivity.class))
         );
+
+
 
 
         //interfaceAndLambdaExercises();
