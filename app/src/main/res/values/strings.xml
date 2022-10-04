@@ -4,4 +4,9 @@
     <string name="constraint_layout_label_button_reset">Bieżący czas</string>
     <string name="constraint_layout_label_button_submit">Zapisz</string>
     <string name="constraint_layout_label_name_input">Imię i nazwisko</string>
+    <string-array name="cities">
+        <item>Kraków</item>
+        <item>Wrocław</item>
+        <item>Poznań</item>
+    </string-array>
 </resources>
