@@ -25,6 +25,10 @@ public class ConstraintLayoutActivity extends AppCompatActivity {
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
                 Log.i("APP", "Text changed " + charSequence.toString());
+                String input = charSequence.toString();
+                if (!(input.length() <= 2 && input.chars().allMatch(c -> Character.isDigit(c)))){
+                    timeEditText.setText(input.substring(0, input.length() - 1));
+                }
             }
 
             @Override
