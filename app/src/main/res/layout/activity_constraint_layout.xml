@@ -11,7 +11,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="48dp"
-        android:text="Button"
+        android:text="@string/constraint_layout_label_button_submit"
         app:layout_constraintEnd_toStartOf="@+id/guideline3"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
         app:layout_constraintTop_toBottomOf="@+id/editTextPhone" />
@@ -31,11 +31,12 @@
         app:layout_constraintGuide_end="16dp" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/nameLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
-        android:text="TextView"
+        android:labelFor="@id/editTextTextPersonName"
+        android:text="@string/constraint_layout_label_name_input"
         app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName"
         app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName" />
 
@@ -63,21 +64,22 @@
         app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/setDefaultTimeButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:text="Button"
+        android:text="@string/constraint_layout_label_button_reset"
         app:layout_constraintEnd_toStartOf="@+id/guideline3"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/editTextTime"
         app:layout_constraintTop_toTopOf="@+id/editTextTime" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/timeLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
+        android:labelFor="@id/editTextTime"
         android:text="TextView"
         app:layout_constraintBottom_toTopOf="@+id/editTextTime"
         app:layout_constraintStart_toStartOf="@+id/editTextTime" />
@@ -105,20 +107,22 @@
         app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/emailLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:text="TextView"
+        android:labelFor="@id/editTextTextEmailAddress"
         app:layout_constraintBottom_toTopOf="@+id/editTextTextEmailAddress"
         app:layout_constraintStart_toStartOf="@+id/editTextTextEmailAddress" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/phoneLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:text="TextView"
+        android:labelFor="@id/editTextPhone"
         app:layout_constraintBottom_toTopOf="@+id/editTextPhone"
         app:layout_constraintStart_toStartOf="@+id/editTextPhone" />
 

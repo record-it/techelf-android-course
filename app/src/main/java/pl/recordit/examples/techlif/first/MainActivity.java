@@ -5,9 +5,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -84,7 +87,7 @@ public class MainActivity extends AppCompatActivity{
     private EmailSender sender;
     private ABC reapeter;
     private Button createActivityButton;
-
+    private Button constraintActivityButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -92,6 +95,7 @@ public class MainActivity extends AppCompatActivity{
         setContentView(R.layout.activity_main);
         message = findViewById(R.id.message);
         createActivityButton = findViewById(R.id.create_activity_button);
+        constraintActivityButton = findViewById(R.id.constraint_activity_button);
         MainActivity mainActivity = this;
         createActivityButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -102,6 +106,11 @@ public class MainActivity extends AppCompatActivity{
                 startActivity(intent);
             }
         });
+        constraintActivityButton.setOnClickListener(v ->
+                startActivity(new Intent(this, ConstraintLayoutActivity.class))
+        );
+
+
         //interfaceAndLambdaExercises();
 
     }
