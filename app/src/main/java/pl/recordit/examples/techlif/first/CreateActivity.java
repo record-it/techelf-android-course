@@ -1,5 +1,6 @@
 package pl.recordit.examples.techlif.first;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -65,7 +66,7 @@ public class CreateActivity extends AppCompatActivity {
         sendEmailButton = findViewById(R.id.sendEmailButton);
         sendEmailButton.setOnClickListener(v -> {
             Intent actionIntent = new Intent(Intent.ACTION_SENDTO);
-            actionIntent.setData(Uri.parse("boss@techelf.pl"));
+            actionIntent.setData(Uri.parse("mailto:boss@techelf.pl"));
             actionIntent.putExtra(Intent.EXTRA_SUBJECT, "Hello");
             actionIntent.putExtra(Intent.EXTRA_TEXT, "Hello");
             actionIntent.setType("message/rfc822");
@@ -75,6 +76,19 @@ public class CreateActivity extends AppCompatActivity {
         //w obłudze przycisku uruchom intencję typu ACTION_DIAL z URI tel:123
         //lub akcję typu ACTION_VIEW z URI content://contacts/people/1
         //lub ACTION_VIEW z adresem strony w URI
+    }
 
+    @Override
+    protected void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putString("data","1234");
+        Log.i(TAG, "Data saved ");
+    }
+
+    @Override
+    protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        String data = savedInstanceState.getString("data");
+        Log.i(TAG, "Restored data: " + data);
     }
 }
